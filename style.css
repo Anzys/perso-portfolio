@@ -213,9 +213,12 @@ section {
 }
 .section4 .projects-container .project-card .bottom p {
   font-size: 1.3rem;
+}
+.section4 .projects-container .project-card .bottom p:nth-child(2) {
   margin-top: 1.2rem;
   font-weight: bold;
 }
+
 .section5 {
   flex-direction: column;
   justify-content: center;
@@ -247,4 +250,89 @@ section {
 }
 .section5 .about-container .right h1 {
   font-size: 3.5rem;
+}
+.section5 .about-container .right p:nth-child(2) {
+  font-weight: 500;
+}
+.section5 .about-container .right p:nth-child(3) {
+  font-weight: 300;
+}
+.section5 .about-container .right a {
+  color: rgb(105, 105, 228);
+  text-decoration: underline;
+}
+.section5 .about-container .right > div {
+  flex-direction: column;
+}
+.section5 .about-container .right > div .tag {
+  font-weight: 500;
+}
+.section5 .about-container .right > div div {
+  display: flex;
+  gap: 3rem;
+}
+.section5 .about-container .right > div div span {
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.8rem;
+}
+.section5 .about-container .right > div div span:hover {
+  cursor: pointer;
+  background: white;
+  color: green;
+}
+
+.section6 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section6 .socials {
+  padding: 4rem;
+  gap: 8rem;
+}
+.section6 .socials i {
+  font-size: 3.8rem;
+  font-size: 3.8rem;
+  font-size: 3.8rem;
+  font-size: 3.8rem;
+}
+.section6 .socials i:nth-child(1) {
+  color: blue;
+}
+.section6 .socials i:nth-child(2) {
+  color: rgb(241, 12, 0);
+}
+.section6 .socials i:nth-child(3) {
+  color: rgb(127, 11, 250);
+}
+.section6 .socials i:nth-child(5) {
+  color: rgb(41, 164, 240);
+}
+.section6 .email-section {
+  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.section6 .email-section .email {
+  background: black;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  gap: 1rem;
+  cursor: pointer;
+}
+.section6 .email-section .email a {
+  color: white;
+}
+.section6 .email-section .email .send {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgb(73, 219, 68);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

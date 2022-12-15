@@ -249,9 +249,9 @@ section {
         p {
           font-size: 1.3rem;
           &:nth-child(2) {
+            margin-top: 1.2rem;
+            font-weight: bold;
           }
-          margin-top: 1.2rem;
-          font-weight: bold;
         }
       }
     }
@@ -289,6 +289,94 @@ section {
         font-size: 3.5rem;
       }
       p {
+        &:nth-child(2) {
+          font-weight: 500;
+        }
+        &:nth-child(3) {
+          font-weight: 300;
+        }
+      }
+      a {
+        color: $link-color;
+        text-decoration: underline;
+      }
+      > div {
+        flex-direction: column;
+        .tag {
+          font-weight: 500;
+        }
+        div {
+          display: flex;
+          gap: 3rem;
+          span {
+            padding: 0.5rem 0.7rem;
+            border-radius: 0.8rem;
+            &:hover {
+              cursor: pointer;
+              background: white;
+              color: green;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//contact section//
+.section6 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .socials {
+    padding: 4rem;
+    gap: 8rem;
+    i {
+      font-size: 3.8rem;
+      &:nth-child(1) {
+        color: blue;
+      }
+      font-size: 3.8rem;
+      &:nth-child(2) {
+        color: rgb(241, 12, 0);
+      }
+      font-size: 3.8rem;
+      &:nth-child(3) {
+        color: rgb(127, 11, 250);
+      }
+      font-size: 3.8rem;
+      &:nth-child(5) {
+        color: rgb(41, 164, 240);
+      }
+    }
+  }
+
+  .email-section {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .email {
+      background: $border-color;
+      display: flex;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      gap: 1rem;
+      cursor: pointer;
+      a {
+        color: white;
+      }
+      .send {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: $color-yellow;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
       }
     }
   }
