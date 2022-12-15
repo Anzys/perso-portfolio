@@ -381,3 +381,41 @@ section {
     }
   }
 }
+
+//footer//
+footer {
+  background: #232323;
+  color: white;
+  .footer-container {
+    max-width: 1440px;
+    flex-direction: column;
+    margin: 0 auto;
+    .footer-top {
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 4rem;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      div {
+        flex-direction: column;
+        h3 {
+          text-transform: uppercase;
+        }
+        ul {
+          flex-direction: column;
+          gap: 0.5rem;
+          li:hover {
+            color: $color-yellow;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .footer-bottom {
+      justify-content: center;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+  }
+}
