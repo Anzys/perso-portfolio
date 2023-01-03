@@ -67,6 +67,10 @@ section {
   left: 53%;
   position: absolute;
 }
+.primary-header .right #checked,
+.primary-header .right .menu-icon {
+  display: none;
+}
 .primary-header .right .navigation {
   padding: 0;
   margin: 0;
@@ -75,13 +79,49 @@ section {
 .primary-header .right .navigation li a:hover {
   color: rgb(73, 219, 68);
 }
+@media screen and (max-width: 768px) {
+  .primary-header .right .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .primary-header .right .navigation {
+    flex-direction: column;
+    width: 15rem;
+    height: 100vh;
+    background: white;
+    position: fixed;
+    left: 100%;
+    top: 4rem;
+    transition: 0.5s ease-in-out;
+  }
+  .primary-header .right .navigation li {
+    padding-left: 1rem;
+  }
+  .primary-header .right #checked:checked ~ ul {
+    left: calc(100% - 15rem);
+  }
+}
+@media screen and (max-width: 480px) {
+  .primary-header .logo {
+    gap: 1.5rem;
+  }
+  .primary-header .logo div:nth-child(1) h1 {
+    font-size: 1 rem;
+  }
+  .primary-header .logo div:nth-child(2) .line {
+    font-size: 0.8rem;
+  }
+  .primary-header .logo div:nth-child(2) .line::before {
+    left: 50%;
+  }
+}
 
 .section1 {
   background: rgb(73, 219, 68);
   margin: 10rem auto 3rem auto;
   padding: 0 2rem;
   width: 92vw;
-  height: 60vh;
+  min-height: 60vh;
   grid-template-areas: "one two";
 }
 .section1 .left {
@@ -129,6 +169,21 @@ section {
   color: white;
   font-size: 2.2rem;
 }
+@media screen and (max-width: 1024px) {
+  .section1 {
+    grid-template-areas: "one" "two";
+    padding-bottom: 2rem;
+  }
+  .section1 .right {
+    align-items: center;
+    margin-top: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section1 .left img {
+    width: 70%;
+  }
+}
 
 .section2 .info-container {
   margin: auto;
@@ -169,6 +224,22 @@ section {
   height: 35px;
   background: black;
 }
+@media screen and (max-width: 1024px) {
+  .section2 .info-container {
+    width: 60%;
+    padding: 1rem;
+    border-radius: 30px;
+  }
+  .section2 .info-container .info-lists {
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .section2 .info-container .info-diver {
+    display: none;
+  }
+}
 
 .section3 .skills-container {
   gap: 8rem;
@@ -181,6 +252,21 @@ section {
 }
 .section3 .skills-container div i {
   font-size: 3rem;
+}
+@media screen and (max-width: 1024px) {
+  .section3 .skills-container {
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section3 .skills-container {
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .section3 div i {
+    width: 4rem;
+  }
 }
 
 .section4 {
@@ -280,6 +366,25 @@ section {
   background: white;
   color: green;
 }
+@media screen and (max-width: 1024px) {
+  .section5 .about-container {
+    flex-direction: column;
+  }
+  .section5 .about-container .left,
+.section5 .about-container .right {
+    width: 100%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section5 .about-container {
+    padding: 3rem 0;
+  }
+  .section5 .about-container .left,
+.section5 .about-container .right {
+    padding: 0;
+  }
+}
 
 .section6 {
   flex-direction: column;
@@ -336,6 +441,14 @@ section {
   align-items: center;
   color: white;
 }
+@media screen and (max-width: 768px) {
+  .section6 .socials {
+    gap: 3rem;
+  }
+  .section6 .socials i {
+    font-size: 3rem;
+  }
+}
 
 footer {
   background: #232323;
@@ -370,6 +483,61 @@ footer .footer-container .footer-top div ul li:hover {
 }
 footer .footer-container .footer-bottom {
   justify-content: center;
-  text-align: center;
   padding-bottom: 2rem;
+}
+@media screen and (max-width: 480px) {
+  footer .footer-top {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgb(73, 219, 68);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 2.5rem;
+  z-index: 999;
+  cursor: pointer;
+}
+.scroll-to-top .scroll-btn {
+  font-size: 10rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation: arrow infinite 2s ease;
+          animation: arrow infinite 2s ease;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 70%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 70%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 40%;
+  }
 }/*# sourceMappingURL=style.css.map */

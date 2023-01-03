@@ -1,3 +1,5 @@
+@import "./mixins";
+
 $color-yellow: rgb(73, 219, 68);
 $body-bg: white;
 $font-slack: "Montserat", sans-serif;
@@ -78,6 +80,10 @@ section {
     }
   }
   .right {
+    #checked,
+    .menu-icon {
+      display: none;
+    }
     .navigation {
       padding: 0;
       margin: 0;
@@ -91,6 +97,52 @@ section {
       }
     }
   }
+  @include tablet() {
+    .right {
+      .menu-icon {
+        display: block;
+        cursor: pointer;
+      }
+      .navigation {
+        flex-direction: column;
+        width: 15rem;
+        height: 100vh;
+        background: $body-bg;
+        position: fixed;
+        left: 100%;
+        top: 4rem;
+        transition: 0.5s ease-in-out;
+
+        li {
+          padding-left: 1rem;
+        }
+      }
+      #checked:checked ~ ul {
+        left: calc(100% - 15rem);
+      }
+    }
+  }
+
+  @include mobile() {
+    .logo {
+      gap: 1.5rem;
+      div {
+        &:nth-child(1) {
+          h1 {
+            font-size: 1 rem;
+          }
+        }
+        &:nth-child(2) {
+          .line {
+            font-size: 0.8rem;
+            &::before {
+              left: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 //hero section//
 .section1 {
@@ -98,7 +150,7 @@ section {
   margin: 10rem auto 3rem auto;
   padding: 0 2rem;
   width: 92vw;
-  height: 60vh;
+  min-height: 60vh;
   grid-template-areas: "one two";
 
   .left {
@@ -153,6 +205,24 @@ section {
       }
     }
   }
+
+  @include Laptop() {
+    grid-template-areas:
+      "one"
+      "two";
+    padding-bottom: 2rem;
+    .right {
+      align-items: center;
+      margin-top: 1rem;
+    }
+  }
+  @include tablet() {
+    .left {
+      img {
+        width: 70%;
+      }
+    }
+  }
 }
 //banner section//
 .section2 {
@@ -199,6 +269,23 @@ section {
       }
     }
   }
+
+  @include Laptop() {
+    .info-container {
+      width: 60%;
+      padding: 1rem;
+      border-radius: 30px;
+      .info-lists {
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+      }
+      .info-diver {
+        display: none;
+      }
+    }
+  }
 }
 
 // /skills
@@ -213,6 +300,23 @@ section {
 
       i {
         font-size: 3rem;
+      }
+    }
+  }
+  @include Laptop() {
+    .skills-container {
+      gap: 3rem;
+    }
+  }
+  @include tablet() {
+    .skills-container {
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    div {
+      i {
+        width: 4rem;
       }
     }
   }
@@ -321,6 +425,26 @@ section {
       }
     }
   }
+  @include Laptop() {
+    .about-container {
+      flex-direction: column;
+      .left,
+      .right {
+        width: 100%;
+
+        text-align: center;
+      }
+    }
+  }
+  @include tablet() {
+    .about-container {
+      padding: 3rem 0;
+      .left,
+      .right {
+        padding: 0;
+      }
+    }
+  }
 }
 //contact section//
 .section6 {
@@ -380,6 +504,14 @@ section {
       }
     }
   }
+  @include tablet() {
+    .socials {
+      gap: 3rem;
+      i {
+        font-size: 3rem;
+      }
+    }
+  }
 }
 
 //footer//
@@ -414,8 +546,51 @@ footer {
     }
     .footer-bottom {
       justify-content: center;
-      text-align: center;
+
       padding-bottom: 2rem;
     }
+  }
+  @include mobile() {
+    .footer-top {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+// scroll
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: $color-yellow;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 2.5rem;
+  z-index: 999;
+  cursor: pointer;
+  .scroll-btn {
+    font-size: 10rem;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: arrow infinite 2s ease;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    top: 50%;
+  }
+
+  50% {
+    top: 70%;
+    opacity: 0.1;
+  }
+  100% {
+    top: 40%;
   }
 }
